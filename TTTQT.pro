@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     TTT.cpp \
     board.cpp \
-    main.cpp
+    main.cpp \
+    title.cpp
 
 HEADERS += \
     TTT.h \
-    board.h
+    board.h \
+    title.h
 
 FORMS += \
-    TTT.ui
+    TTT.ui \
+    title.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
