@@ -1,5 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include <QtGlobal>
+#include <vector>
 enum class BoardMark
 {
     Empty,X,O
@@ -8,22 +10,27 @@ enum class GameState
 {
     InGame,XWin,OWin,Tie,
 };
-
+using std::vector;
 class Board
 {
 private:
-    const static int BoardSize=3;
-    BoardMark board[BoardSize][BoardSize];
-    GameState state;
-    short inputCount;
+    vector<vector<BoardMark>>board;
+    int BoardSize;
+    BoardMark CPU;
+    BoardMark player;
+
 private:
-    GameState getNewState(BoardMark currentPlayer);
+    int maxMove(int depth, int alpha, int beta);
+    int minMove(int depth, int alpha, int beta);
+    int score(GameState gamestate);
+
 public:
-    Board();
-    bool setPlayerInput(int row,int col,BoardMark currentPlayer);
-    void printBoard();
+    Board(int BoardSize);
+    GameState evalBoard();
+    bool setPlayerInput(int row, int col, BoardMark currentPlayer);
+    int miniMax(BoardMark currentPlayer, int depth);
+    GameState updateState();
     void reset();
-    GameState updateState(BoardMark currentPlayer);
 };
 
 #endif
