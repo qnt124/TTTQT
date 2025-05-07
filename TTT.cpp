@@ -65,8 +65,8 @@ QString TTT::getCurrentPlayerColor()
     QString color;
     switch(this->currentPlayer)
     {
-    case BoardMark::O:color="#FF5722";break;
-    case BoardMark::X:color="#455A64";break;
+    case BoardMark::O:color="#0000FF";break;
+    case BoardMark::X:color="#FF0000";break;
     default:return "#FFF";
     }
         return QString("font: 50px \"Arial\";"
