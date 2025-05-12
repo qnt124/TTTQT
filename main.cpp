@@ -1,4 +1,3 @@
-#include "TTT.h"
 #include "title.h"
 #include <QApplication>
 

@@ -16,6 +16,7 @@ Title::Title(QWidget *parent) :
 void Title::setConnections()
 {
     connect(ui->BoardSize, SIGNAL(valueChanged(int)), SLOT(updateBoardSize(int)));
+    connect(ui->miniMaxDepth, SIGNAL(valueChanged(int)), SLOT(updateMiniMaxDepth(int)));
     connect(ui->onePlayer, SIGNAL(toggled(bool)), SLOT(update1Player(bool)));
     connect(ui->twoPlayers, SIGNAL(toggled(bool)), SLOT(update2Players(bool)));
     connect(ui->CPUstart, SIGNAL(toggled(bool)), SLOT(updateCPUstart(bool)));
